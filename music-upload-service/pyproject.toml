@@ -22,13 +22,6 @@ dependencies = [
     "minio>=7.2.18",
 ]
 
-[project.optional-dependencies]
-dev = [
-    "pytest>=8.4.2",
-    "pytest-asyncio>=1.2.0",
-    "httpx>=0.28.1",
-    "ruff>=0.14.1"
-]
 
 [tool.hatch.build.targets.wheel]
 packages = ["app"]
@@ -65,3 +58,12 @@ known-first-party = ["app"]
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "pre-commit>=4.3.0",
+    "pytest>=8.4.2",
+    "pytest-asyncio>=1.2.0",
+    "ruff>=0.14.1",
+]
